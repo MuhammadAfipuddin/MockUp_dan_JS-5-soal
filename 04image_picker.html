@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <style>
+        #gambar {
+            width: 100px;
+        }
+
+        #dropdown {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <select id="dropdown" onchange="cetak()">
+        <option value="mata">mata</option>
+        <option value="sunrise">sunrise</option>
+        <option value="mawar">mawar</option>
+        <option value="senja">senja</option>
+        <option value="abstrak">abstrak</option>
+        <option value="bintang">bintang</option>
+    </select>
+    <br>
+    <img id="image" style="width: 25%;">
+    
+
+
+    <script>
+        const cetak = () => {
+        const dropdown = document.getElementById("dropdown");
+        const image = document.getElementById("image");
+
+        if(dropdown.value === 'mata') {
+            image.setAttribute('src', './img/01.jpg');
+            alert('ini foto background mata');
+        } else if (dropdown.value === 'sunrise') {
+            image.setAttribute('src', './img/02.jpg');
+            alert('ini foto background sunrise');
+        } else if (dropdown.value === 'mawar') {
+            image.setAttribute('src', './img/03.jpg');
+            alert('ini foto background mawar');
+        } else if (dropdown.value === 'senja') {
+            image.setAttribute('src', './img/04.jpg');
+            alert('ini foto background senja');
+        } else if (dropdown.value === 'abstrak') {
+            image.setAttribute('src', './img/05.jpg');
+            alert('ini foto backround abstrak');
+        } else if (dropdown.value === 'bintang') {
+            image.setAttribute('src', './img/06.jpg');
+            alert('ini foto background bintang');
+        }
+    }
+    </script>
+</body>
+</html>

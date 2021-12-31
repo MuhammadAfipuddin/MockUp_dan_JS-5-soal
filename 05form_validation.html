@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            visibility: hidden;
+            color: red;
+        }
+
+        #hasi {
+            border: 1px solid black;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <td><label for="nama">Nama Pelanggan</label></td>
+            <td><input type="text" id="nama" placeholder="Masukkan nama anda" required></td>
+            <td><span>Nama tidak boleh kosong ataupun lebih dari 30 karakter</span></td>
+            <tr></tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="email" id="email" placeholder="Masukkan email anda" required></td>
+            <td><span>Email tidak boleh kosong</span></td>
+            <tr></tr>
+            <td><label for="waktu">Jam Keberangkatan</label></td>
+            <td><input type="time" id="waktu" required></td>
+            <td><span>Waktu tidak boleh kosong</span></td>
+            <tr></tr>
+            <td><label for="tujuan">Tujuan Keberangkatan</label></td>
+            <td><input type="text" id="tujuan" placeholder="Masukkan tujuan anda" required></td>
+            <td><span>Tujuan tidak boleh kosong</span></td>
+            <tr></tr>
+            <td><label for="jumlah">Jumlah Tiket</label></td>
+            <td><input type="number" id="jumlah" placeholder="masukkan jumlah tiket anda" required="required"></td>
+            <td><span>Jumlah tiket tidak boleh kosong ataupun lebih dari 10</span></td>
+            <tr></tr>
+            <td></td>
+            <td><button onclick="cok()">Submit</button></td>
+        </tbody>
+    </table>
+    
+    <div id="hasil"></div>
+
+    <script>
+        let nama = document.getElementById("nama");
+        let email = document.getElementById("email");
+        let waktu = document.getElementById("waktu");
+        let tujuan = document.getElementById("tujuan");
+        let jumlah = document.getElementById("jumlah");
+        let span = document.getElementsByTagName("span");
+        let hasil = document.getElementById("hasil");
+
+        function cok() {
+            if (nama.value.lenght >= 30 || nama.value == 0) {
+                span[0].style.visibility = "visible" 
+            } else if (email.value == "") {
+                span[1].style.visibility = "visible"
+            } else if (waktu.value == "") {
+                span[2].style.visibility = "visible"
+            } else if (tujuan.value == "") {
+                span[3].style.visibility = "visible"
+            } else if (jumlah.value > 10 || jumlah.value < 1) {
+                span[4].style.visibility = "visible"
+            } else {
+                hasil.innerHTML = nama.value + "<br>" + email.value + "<br>" + waktu.value + "<br>" + tujuan.value + "<br>" + jumlah.value
+            }
+        }
+    </script>
+</body>
+</html>
